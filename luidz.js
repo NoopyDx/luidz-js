@@ -35,7 +35,7 @@ closeButton.addEventListener("click", () => {
 const iframe = document.createElement("iframe");
 iframe.width = "100%";
 iframe.height = "100%";
-iframe.src = "http://localhost:3001?id=" + getParams("modal.js")["id"];
+iframe.src = "http://localhost:3001?id=" + getParams("luidz.js")["id"];
 iframe.style.position = "absolute";
 iframe.style.top = "0";
 iframe.style.left = "0";
