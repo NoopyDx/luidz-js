@@ -1,14 +1,5 @@
-console.log(document.cookie)
-document.cookie = "luidz=true"
-console.log(document.cookie)
 
-const isNew = localStorage.getItem("visit") == null;
-
-if (isNew) {
-  console.log("jamais")
-  console.log(localStorage.getItem("visit"))
-  localStorage.setItem("visit", "true");
-  function getParams(a) {
+function getParams(a) {
   var b = document.getElementsByTagName("script");
   for (var i = 0; i < b.length; i++) {
     if (b[i].src.indexOf("/" + a) > -1) {
@@ -23,7 +14,29 @@ if (isNew) {
   }
   return {};
   }
-  
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+} 
+document.cookie.indexOf('luidz=');
+const isNew = true;
+if (isNew) {
   const modal = document.createElement("div");
   document.body.appendChild(modal);
   modal.style.width = "512px";
