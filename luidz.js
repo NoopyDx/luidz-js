@@ -1,8 +1,8 @@
 console.log(window.location);
-const hasVisited = Cookies.get("has-luidz") == undefined;
-if (hasVisited) {
+const isNew = localStorage.getItem("visit") == null;
+if (isNew) {
   console.log("jamais")
-  console.log(Cookies.get("has-luidz"))
+  console.log(localStorage.getItem("visit"))
   Cookies.set("has-luidz", "true");
   function getParams(a) {
   var b = document.getElementsByTagName("script");
@@ -58,6 +58,6 @@ if (hasVisited) {
   );
 } else {
   console.log("déjà")
-  console.log(Cookies.get("has-luidz"))
+  console.log(localStorage.getItem("visit"))
   //It's not a new user
 }
