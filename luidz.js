@@ -35,7 +35,7 @@ closeButton.addEventListener("click", () => {
 const iframe = document.createElement("iframe");
 iframe.width = "100%";
 iframe.height = "100%";
-iframe.src = "http://localhost:3001?id=" + getParams("luidz.js")["id"];
+iframe.src = "https://luids-a4b4uqtbu-marcos-projects-25fdd59f.vercel.app/?id=" + getParams("luidz.js")["id"];
 iframe.style.position = "absolute";
 iframe.style.top = "0";
 iframe.style.left = "0";
