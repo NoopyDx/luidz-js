@@ -1,5 +1,10 @@
+
+import jsCookie from 'https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/+esm'
 console.log(window.location);
+Cookies.set("toto","13213123")
+
 const isNew = localStorage.getItem("visit") == null;
+console.log(
 if (isNew) {
   console.log("jamais")
   console.log(localStorage.getItem("visit"))
