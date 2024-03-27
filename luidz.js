@@ -34,7 +34,7 @@ function getCookie(name) {
     //return unescape(dc.substring(begin + prefix.length, end));
     return decodeURI(dc.substring(begin + prefix.length, end));
 } 
-document.cookie.indexOf('luidz=');
+console.log(document.cookie.indexOf('luidz=');)
 const isNew = true;
 if (isNew) {
   const modal = document.createElement("div");
