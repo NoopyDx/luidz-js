@@ -3,7 +3,7 @@ document.cookie = "luidz=true"
 console.log(document.cookie)
 
 const isNew = localStorage.getItem("visit") == null;
-console.log(
+
 if (isNew) {
   console.log("jamais")
   console.log(localStorage.getItem("visit"))
