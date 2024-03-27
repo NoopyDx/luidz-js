@@ -14,29 +14,20 @@ function getParams(a) {
   }
   return {};
   }
-function getCookie(name) {
-    var dc = document.cookie;
-    var prefix = name + "=";
-    var begin = dc.indexOf("; " + prefix);
-    if (begin == -1) {
-        begin = dc.indexOf(prefix);
-        if (begin != 0) return null;
+function hasVisited() {
+
+    if (document.cookie.indexOf('luidz=') === -1) {
+      return false;
     }
-    else
-    {
-        begin += 2;
-        var end = document.cookie.indexOf(";", begin);
-        if (end == -1) {
-        end = dc.length;
-        }
+    else {
+      return true;
     }
-    // because unescape has been deprecated, replaced with decodeURI
-    //return unescape(dc.substring(begin + prefix.length, end));
-    return decodeURI(dc.substring(begin + prefix.length, end));
+
 } 
-console.log(document.cookie.indexOf('dsqdqsdqsdqsdqdsdq='))
-const isNew = true;
+const isNew = !hasVisited();
 if (isNew) {
+  document.cookie = "luidz=true"
+  console.log("nouveau, cookie updaté")
   const modal = document.createElement("div");
   document.body.appendChild(modal);
   modal.style.width = "512px";
@@ -74,7 +65,6 @@ if (isNew) {
     false
   );
 } else {
-  console.log("déjà")
-  console.log(localStorage.getItem("visit"))
+  console.log("déjà venu")
   //It's not a new user
 }
