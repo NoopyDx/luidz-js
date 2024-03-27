@@ -3,7 +3,7 @@ const isNew = localStorage.getItem("visit") == null;
 if (isNew) {
   console.log("jamais")
   console.log(localStorage.getItem("visit"))
-  Cookies.set("has-luidz", "true");
+  localStorage.setItem("visit", "true");
   function getParams(a) {
   var b = document.getElementsByTagName("script");
   for (var i = 0; i < b.length; i++) {
