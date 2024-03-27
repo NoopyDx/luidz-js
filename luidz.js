@@ -26,8 +26,7 @@ function hasVisited() {
 } 
 const isNew = !hasVisited();
 if (isNew) {
-  document.cookie = "luidz=true"
-  console.log("nouveau, cookie updaté")
+  
   const modal = document.createElement("div");
   document.body.appendChild(modal);
   modal.style.width = "512px";
@@ -44,6 +43,8 @@ if (isNew) {
   modal.appendChild(closeButton);
   closeButton.addEventListener("click", () => {
     modal.remove();
+    document.cookie = "luidz=true"
+    console.log("nouveau, cookie updaté")
   });
   const iframe = document.createElement("iframe");
   iframe.width = "100%";
@@ -60,6 +61,8 @@ if (isNew) {
     function (event) {
       if (event.data === "fermerModal") {
         modal.remove();
+        document.cookie = "luidz=true"
+        console.log("nouveau, cookie updaté")
       }
     },
     false
